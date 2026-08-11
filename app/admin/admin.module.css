@@ -1,0 +1,130 @@
+.adminLayout {
+  display: flex;
+  min-height: 100vh;
+  background-color: var(--color-off-white);
+}
+
+.sidebar {
+  width: 250px;
+  background-color: var(--color-white);
+  border-right: 1px solid var(--color-light-grey);
+  padding: var(--spacing-md);
+  display: flex;
+  flex-direction: column;
+}
+
+.brand {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: var(--spacing-lg);
+  letter-spacing: 0.1em;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.navLink {
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: var(--border-radius);
+  color: var(--color-dark-grey);
+  transition: var(--transition);
+}
+
+.navLink:hover {
+  background-color: var(--color-light-grey);
+}
+
+.navLinkActive {
+  background-color: var(--color-foreground);
+  color: var(--color-background);
+}
+
+.mainContent {
+  flex: 1;
+  padding: var(--spacing-lg);
+  overflow-y: auto;
+}
+
+.dashboardGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-lg);
+}
+
+.statCard {
+  background-color: var(--color-white);
+  padding: var(--spacing-md);
+  border-radius: var(--border-radius);
+  border: 1px solid var(--color-light-grey);
+}
+
+.statTitle {
+  font-size: 0.8rem;
+  color: var(--color-dark-grey);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: var(--spacing-xs);
+}
+
+.statValue {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+/* Forms */
+.formGroup {
+  margin-bottom: var(--spacing-md);
+}
+
+.label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-bottom: var(--spacing-xs);
+}
+
+.input, .textarea, .select {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--color-light-grey);
+  border-radius: var(--border-radius);
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+.textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.productTable {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-light-grey);
+  border-radius: var(--border-radius);
+}
+
+.productTable th, .productTable td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid var(--color-light-grey);
+}
+
+.productTable th {
+  font-weight: 500;
+  color: var(--color-dark-grey);
+  background-color: var(--color-off-white);
+}
+
+.actionBtn {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.8rem;
+  margin-right: 0.5rem;
+  border: 1px solid var(--color-light-grey);
+  border-radius: 4px;
+}

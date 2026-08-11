@@ -1,0 +1,83 @@
+[
+  {
+    "id": "84549ce6-4fa0-4f75-b9e1-1b7b687bee81",
+    "name": "ZOX GREEN",
+    "category": "T-Shirts",
+    "description": "PREMIUM T SHIRT",
+    "price": 1200,
+    "discountPrice": 999,
+    "sku": "ZOX-TS-002",
+    "stock": 5,
+    "sizes": [
+      "S",
+      "M"
+    ],
+    "colours": [
+      "GREEN",
+      "BLACK"
+    ],
+    "tags": [
+      "ESSENTIAL"
+    ],
+    "images": [
+      "/uploads/e62daf67dc96bc342b34b223873a58a0.png"
+    ],
+    "createdAt": "2026-08-11T12:38:20.889Z",
+    "updatedAt": "2026-08-11T12:38:20.889Z"
+  },
+  {
+    "id": "e12c2e0b-0615-4fbd-8f0f-25210be8a967",
+    "name": "oversized mens jacket",
+    "category": "T-Shirts",
+    "description": "PREMIUM OUTFITS",
+    "price": 2500,
+    "discountPrice": 1999,
+    "sku": "ZOX-TS-003",
+    "stock": 12,
+    "sizes": [
+      "S",
+      "M",
+      "L"
+    ],
+    "colours": [
+      "GREEN",
+      "BLACK"
+    ],
+    "tags": [
+      "NEW"
+    ],
+    "images": [
+      "/uploads/51fb671058061b879fc764a743885918.png",
+      "/uploads/9e65eeccef2a45d61a58bead2660ffa1.png"
+    ],
+    "createdAt": "2026-08-11T12:45:57.485Z",
+    "updatedAt": "2026-08-11T12:45:57.485Z"
+  },
+  {
+    "id": "dbe3cbf9-50f8-4300-8add-10a6e7931bd2",
+    "name": "oversized mens jacket",
+    "category": "T-Shirts",
+    "description": "KHDGGUFEWFUFEU",
+    "price": 22000,
+    "discountPrice": 2000,
+    "sku": "ZOX-TS-004",
+    "stock": 20,
+    "sizes": [
+      "S",
+      "M",
+      "L"
+    ],
+    "colours": [
+      "GREEN",
+      "BLACK"
+    ],
+    "tags": [
+      "NEW"
+    ],
+    "images": [
+      "/uploads/e05b66816a62cd57475cba54ed9813c9.png"
+    ],
+    "createdAt": "2026-08-11T12:48:41.052Z",
+    "updatedAt": "2026-08-11T12:48:41.052Z"
+  }
+]
