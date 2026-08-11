@@ -18,20 +18,15 @@
   
   --spacing-xs: 0.5rem;
   --spacing-sm: 1rem;
-  --spacing-md: 2rem;
-  --spacing-lg: 4rem;
-  --spacing-xl: 8rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 3rem;
 
   --border-radius: 4px;
   --transition: all 0.3s ease;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --color-background: #061f13;
-    --color-foreground: #edf3f0;
-  }
-}
+/* Dark mode disabled to keep green/white brand theme consistent */
 
 * {
   box-sizing: border-box;
