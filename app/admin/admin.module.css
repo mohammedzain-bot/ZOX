@@ -128,3 +128,163 @@
   border: 1px solid var(--color-light-grey);
   border-radius: 4px;
 }
+
+/* ─── MOBILE ADMIN (max-width: 768px) ─────────────────────────────────────── */
+@media (max-width: 768px) {
+
+  /* === LAYOUT === */
+  .adminLayout {
+    flex-direction: column;
+    background-color: #F4F6F5;
+    padding-bottom: 80px; /* space for bottom nav */
+  }
+
+  /* Hide desktop sidebar */
+  .sidebar {
+    display: none;
+  }
+
+  /* Main content full width */
+  .mainContent {
+    padding: 1rem;
+    width: 100%;
+  }
+
+  /* === MOBILE TOP BAR === */
+  .adminLayout::before {
+    content: 'ZOX ADMIN';
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background-color: #0A4C2E;
+    color: white;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    padding: 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  }
+
+  /* === MOBILE BOTTOM TAB NAV === */
+  .adminLayout::after {
+    content: '';
+    display: block;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 70px;
+    background: white;
+    border-top: 1px solid #E0E0E0;
+    z-index: 200;
+  }
+
+  /* === DASHBOARD STATS === */
+  .dashboardGrid {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+  }
+
+  .statCard {
+    padding: 1rem;
+    border-radius: 12px;
+    border: none;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  }
+
+  .statTitle {
+    font-size: 0.7rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .statValue {
+    font-size: 1.5rem;
+  }
+
+  /* === PRODUCT TABLE → CARDS === */
+  .productTable {
+    border: none;
+    background: transparent;
+  }
+
+  .productTable thead {
+    display: none; /* hide column headers on mobile */
+  }
+
+  .productTable tbody tr {
+    display: block;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    margin-bottom: 0.75rem;
+    padding: 1rem;
+    border: none;
+  }
+
+  .productTable td {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: none;
+    padding: 0.4rem 0;
+    font-size: 0.9rem;
+    border-bottom: 1px solid #f0f0f0;
+  }
+
+  .productTable td:last-child {
+    border-bottom: none;
+    padding-top: 0.75rem;
+    justify-content: flex-end;
+    gap: 0.5rem;
+  }
+
+  .productTable td::before {
+    content: attr(data-label);
+    font-weight: 600;
+    font-size: 0.75rem;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  /* === ACTION BUTTONS === */
+  .actionBtn {
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+    border-radius: 8px;
+    font-weight: 500;
+  }
+
+  /* === FORMS === */
+  .formGroup {
+    margin-bottom: 1rem;
+  }
+
+  .input, .textarea, .select {
+    padding: 0.9rem;
+    border-radius: 10px;
+    font-size: 1rem;
+    border: 1px solid #E0E0E0;
+    background-color: white;
+  }
+
+  .input:focus, .textarea:focus, .select:focus {
+    outline: none;
+    border-color: #0A4C2E;
+    box-shadow: 0 0 0 2px rgba(10, 76, 46, 0.1);
+  }
+
+  .label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 0.4rem;
+  }
+
+}
+

@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import styles from './admin.module.css';
+import AdminBottomNav from '@/components/AdminBottomNav';
 
 export default function AdminLayout({ children }) {
   const pathname = usePathname();
@@ -94,6 +95,7 @@ export default function AdminLayout({ children }) {
       <main className={styles.mainContent}>
         {children}
       </main>
+      <AdminBottomNav />
     </div>
   );
 }

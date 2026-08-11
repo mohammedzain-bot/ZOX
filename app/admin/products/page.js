@@ -52,20 +52,20 @@ export default function AdminProducts() {
         <tbody>
           {products.map(product => (
             <tr key={product.id}>
-              <td>
+              <td data-label="Image">
                 {product.images && product.images[0] ? (
-                  <img src={product.images[0]} alt={product.name} style={{width: '50px', height: '50px', objectFit: 'cover'}} />
+                  <img src={product.images[0]} alt={product.name} style={{width: '50px', height: '50px', objectFit: 'cover', borderRadius: '8px'}} />
                 ) : (
-                  <div style={{width: '50px', height: '50px', backgroundColor: '#eee'}}></div>
+                  <div style={{width: '50px', height: '50px', backgroundColor: '#eee', borderRadius: '8px'}}></div>
                 )}
               </td>
-              <td>{product.name}</td>
-              <td>{product.category}</td>
-              <td>₹{product.price}</td>
-              <td>{product.stock}</td>
-              <td>
-                <Link href={`/admin/products/edit/${product.id}`} className={styles.actionBtn} style={{color: 'blue'}}>Edit</Link>
-                <button className={styles.actionBtn} style={{color: 'red'}} onClick={() => handleDelete(product.id)}>Delete</button>
+              <td data-label="Name">{product.name}</td>
+              <td data-label="Category">{product.category}</td>
+              <td data-label="Price">₹{product.price}</td>
+              <td data-label="Stock">{product.stock}</td>
+              <td data-label="Actions">
+                <Link href={`/admin/products/edit/${product.id}`} className={styles.actionBtn} style={{color: 'white', backgroundColor: '#0A4C2E', marginRight: '0.5rem'}}>Edit</Link>
+                <button className={styles.actionBtn} style={{color: 'white', backgroundColor: '#c0392b'}} onClick={() => handleDelete(product.id)}>Delete</button>
               </td>
             </tr>
           ))}
