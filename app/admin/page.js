@@ -11,10 +11,13 @@ export default function AdminDashboard() {
       fetch('/api/products').then(res => res.json()),
       fetch('/api/orders').then(res => res.json())
     ]).then(([products, orders]) => {
-      const totalSales = orders.reduce((sum, order) => sum + (order.total || 0), 0);
+      const pArray = Array.isArray(products) ? products : [];
+      const oArray = Array.isArray(orders) ? orders : [];
+      
+      const totalSales = oArray.reduce((sum, order) => sum + (order.total || 0), 0);
       setStats({
-        products: products.length || 0,
-        orders: orders.length || 0,
+        products: pArray.length || 0,
+        orders: oArray.length || 0,
         sales: totalSales
       });
     }).catch(err => console.error("Error fetching stats:", err));
