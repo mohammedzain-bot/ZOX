@@ -14,24 +14,12 @@ export async function POST(request) {
 
     const bytes = await file.arrayBuffer();
     const buffer = Buffer.from(bytes);
+    const mimeType = file.type;
 
-    // Generate unique filename
-    const ext = file.name.split('.').pop();
-    const uniqueFilename = `${crypto.randomBytes(16).toString('hex')}.${ext}`;
-    
-    const uploadDir = path.join(process.cwd(), 'public', 'uploads');
-    
-    // Ensure directory exists
-    try {
-      await fs.access(uploadDir);
-    } catch {
-      await fs.mkdir(uploadDir, { recursive: true });
-    }
+    // Convert to Base64 data URL to bypass Vercel's read-only filesystem
+    const base64Data = `data:${mimeType};base64,${buffer.toString('base64')}`;
 
-    const filePath = path.join(uploadDir, uniqueFilename);
-    await fs.writeFile(filePath, buffer);
-
-    return NextResponse.json({ url: `/uploads/${uniqueFilename}` });
+    return NextResponse.json({ url: base64Data });
   } catch (error) {
     console.error('Upload error:', error);
     return NextResponse.json({ error: 'Failed to upload file' }, { status: 500 });
