@@ -3,6 +3,8 @@ import ProductCard from '@/components/ProductCard';
 import { getCollection } from '@/lib/mongodb';
 import NewsletterForm from '@/components/NewsletterForm';
 
+export const dynamic = 'force-dynamic';
+
 async function getFeaturedProducts() {
   const col = await getCollection('products');
   const products = await col.find({}).sort({ createdAt: -1 }).limit(4).toArray();

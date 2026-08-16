@@ -2,6 +2,8 @@ import ProductCard from '@/components/ProductCard';
 import { getCollection } from '@/lib/mongodb';
 import Link from 'next/link';
 
+export const dynamic = 'force-dynamic';
+
 async function getProducts() {
   const col = await getCollection('products');
   const products = await col.find({}).sort({ createdAt: -1 }).toArray();
