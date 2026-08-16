@@ -1,6 +1,8 @@
 import { NextResponse } from 'next/server';
 import { getCollection } from '@/lib/mongodb';
 
+export const dynamic = 'force-dynamic';
+
 export async function PUT(request, { params }) {
   try {
     const { id } = await params;

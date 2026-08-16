@@ -2,6 +2,8 @@ import { NextResponse } from 'next/server';
 import { getCollection } from '@/lib/mongodb';
 import crypto from 'crypto';
 
+export const dynamic = 'force-dynamic';
+
 export async function GET() {
   try {
     const col = await getCollection('products');
