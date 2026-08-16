@@ -5,10 +5,15 @@ import Link from 'next/link';
 export const dynamic = 'force-dynamic';
 
 async function getProducts() {
-  const col = await getCollection('products');
-  const products = await col.find({}).sort({ createdAt: -1 }).toArray();
-  // MongoDB uses _id which can cause serialization issues in Server Components
-  return products.map(({ _id, ...rest }) => rest);
+  try {
+    const col = await getCollection('products');
+    const products = await col.find({}).sort({ createdAt: -1 }).toArray();
+    // MongoDB uses _id which can cause serialization issues in Server Components
+    return products.map(({ _id, ...rest }) => ({ id: _id.toString(), ...rest }));
+  } catch (error) {
+    console.error("Database connection failed:", error);
+    return []; // Return empty array if DB is unreachable to prevent crash
+  }
 }
 
 export default async function Shop({ searchParams }) {

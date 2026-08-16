@@ -6,9 +6,14 @@ import NewsletterForm from '@/components/NewsletterForm';
 export const dynamic = 'force-dynamic';
 
 async function getFeaturedProducts() {
-  const col = await getCollection('products');
-  const products = await col.find({}).sort({ createdAt: -1 }).limit(4).toArray();
-  return products.map(({ _id, ...rest }) => ({ id: _id.toString(), ...rest }));
+  try {
+    const col = await getCollection('products');
+    const products = await col.find({}).sort({ createdAt: -1 }).limit(4).toArray();
+    return products.map(({ _id, ...rest }) => ({ id: _id.toString(), ...rest }));
+  } catch (error) {
+    console.error("Database connection failed:", error);
+    return []; // Return empty array if DB is unreachable to prevent crash
+  }
 }
 
 export default async function Home() {
