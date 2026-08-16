@@ -1,11 +1,12 @@
 import Link from 'next/link';
 import ProductCard from '@/components/ProductCard';
-import { readDB } from '@/lib/db';
+import { getCollection } from '@/lib/mongodb';
 import NewsletterForm from '@/components/NewsletterForm';
 
 async function getFeaturedProducts() {
-  const products = await readDB('products.json');
-  return products.slice(0, 4);
+  const col = await getCollection('products');
+  const products = await col.find({}).sort({ createdAt: -1 }).limit(4).toArray();
+  return products.map(({ _id, ...rest }) => ({ id: _id.toString(), ...rest }));
 }
 
 export default async function Home() {

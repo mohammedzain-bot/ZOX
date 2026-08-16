@@ -1,9 +1,12 @@
 import ProductCard from '@/components/ProductCard';
-import { readDB } from '@/lib/db';
+import { getCollection } from '@/lib/mongodb';
 import Link from 'next/link';
 
 async function getProducts() {
-  return await readDB('products.json');
+  const col = await getCollection('products');
+  const products = await col.find({}).sort({ createdAt: -1 }).toArray();
+  // MongoDB uses _id which can cause serialization issues in Server Components
+  return products.map(({ _id, ...rest }) => rest);
 }
 
 export default async function Shop({ searchParams }) {
